@@ -6,7 +6,7 @@ import ApiWEG from "./core/api";
 import SocketWEG from "./core/socket";
 import cors from "cors";
 import { getconn } from "./helpers/conn";
- 
+
 
 dotenv.config();
 
@@ -15,10 +15,10 @@ app.use(cors());
 const httpServer = createServer(app);
 
 // Configuração da porta HTTP
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 3001;
 
 // Configuração da porta Socket.io
-const SOCKET_PORT = Number(process.env.SOCKET_PORT) || 4000;
+const SOCKET_PORT = Number(process.env.SOCKET_PORT) || 3002;
 
 getconn();
 

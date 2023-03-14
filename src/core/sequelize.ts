@@ -10,11 +10,11 @@ class MySQLConnection {
   private LocalsModel: any;
 
   constructor() {
-    this.host = "localhost";
-    this.port = 3306;
-    this.username = "root";
-    this.password = "";
-    this.database = "almox-wli";
+    this.host = process.env.DB_HOST || "localhost";
+    this.port = Number(process.env.DB_PORT) || 3306;
+    this.username = process.env.DB_USER || "root";
+    this.password = process.env.DB_PASS || "";
+    this.database = process.env.DB_NAME || "almox_wli";
 
     this.sequelize = new Sequelize(
       this.database,
